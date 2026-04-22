@@ -7,4 +7,7 @@
   <Project Path="YearOfWeekend01/YearOfWeekend01.csproj" Id="86a987b7-2743-455d-b7ca-8a1962cee663" />
   <Project Path="YearOfWeekend02/YearOfWeekend02.csproj" Id="eff27ee8-5564-47e6-965f-dce518de5694" />
   <Project Path="YearOfWeekend03/YearOfWeekend03.csproj" Id="9f6569ec-4ebf-49e3-9c9c-10d22bc921b9" />
+  <Project Path="YearOfWeekendForm/YearOfWeekendForm.csproj" Id="66f5865e-52d9-434f-999f-7eb9a59b6ac6" />
+  <Project Path="YearOfWeekendForm02/YearOfWeekendForm02.csproj" Id="5e116ef7-ec4b-4c2d-ba8b-1f8e76924c0c" />
+  <Project Path="YearOfWeekendForm03/YearOfWeekendForm03.csproj" Id="0f65a298-e945-4d5b-b60f-71b9bea1d683" />
 </Solution>
