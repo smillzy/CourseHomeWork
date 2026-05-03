@@ -38,23 +38,23 @@ namespace FarmerCrossRiver
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MoveItems(listBox1, _leftList, _rightList);
+            MoveItems(listBox1, listBox2, _leftList, _rightList);
         }
-       
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MoveItems(listBox2, _rightList, _leftList);
+            MoveItems(listBox2, listBox1, _rightList, _leftList);
         }
 
-        private void MoveItems(ListBox listBox, List<string> fromList, List<string> toList)
+        private void MoveItems(ListBox fromListBox, ListBox toListBox, List<string> fromList, List<string> toList)
         {
-            if (!SomeThingHasBeenChosen(listBox))
+            if (!SomeThingHasBeenChosen(fromListBox))
             {
                 return;
             }
 
-            List<string> selectedItems = listBox.SelectedItems.Cast<string>().ToList();
+            List<string> selectedItems = fromListBox.SelectedItems.Cast<string>().ToList();
 
             if (!IsValidMove(selectedItems))
             {
@@ -69,6 +69,7 @@ namespace FarmerCrossRiver
             }
 
             ChangeData();
+            SelectFarmer(fromListBox, toListBox);
 
             if (!IsSafe())
             {
@@ -107,6 +108,19 @@ namespace FarmerCrossRiver
             }
 
             return true;
+        }
+
+        private void SelectFarmer(ListBox fromListBox, ListBox toListBox)
+        {
+            fromListBox.ClearSelected();
+            toListBox.ClearSelected();
+
+            int index = toListBox.Items.IndexOf("農夫");
+
+            if (index >= 0)
+            {
+                toListBox.SetSelected(index, true);
+            }
         }
 
         private bool IsSafe()
