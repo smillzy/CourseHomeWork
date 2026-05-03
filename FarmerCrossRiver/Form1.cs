@@ -26,6 +26,12 @@ namespace FarmerCrossRiver
         {
             listBox1.SelectionMode = SelectionMode.MultiSimple;
             listBox2.SelectionMode = SelectionMode.MultiSimple;
+
+            int index = listBox1.Items.IndexOf("農夫");
+            if (index >= 0)
+            {
+                listBox1.SetSelected(index, true);
+            }
         }
 
         private void ChangeData()
@@ -163,8 +169,7 @@ namespace FarmerCrossRiver
             }
             else
             {
-                button1.Enabled = false;
-                button2.Enabled = false;
+                this.Close();
             }
         }
 
