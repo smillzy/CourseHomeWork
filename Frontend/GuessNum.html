@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>猜數字</title>
+  </head>
+  <body>
+    <script>
+      let ans = Math.floor(Math.random() * 100) + 1;
+      // Math.random() : 會產生一個 0 到小於 1 的隨機小數。
+      // 乘以 100 : 就會變成 0 到小於 100 的小數。
+      // Math.floor() : 無條件捨去小數，會得到 0 到 99 的整數
+      let min = 1;
+      let max = 100;
+      let guess;
+
+      while (guess != ans) {
+        guess = Number(prompt("請輸入" + min + "-" + max + "之間整數"));
+        // prompt() 是 瀏覽器提供的輸入視窗
+
+        if (guess < min || guess > max) {
+          alert("超出範圍");
+        } else if (guess < ans) {
+          min = guess;
+        } else if (guess > ans) {
+          max = guess;
+        } else {
+          alert("猜中了，答案是：" + ans);
+        }
+      }
+    </script>
+  </body>
+</html>
