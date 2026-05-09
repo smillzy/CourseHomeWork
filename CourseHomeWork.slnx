@@ -1,17 +1,17 @@
 <Solution>
-  <Project Path="FarmerCrossRiver/FarmerCrossRiver.csproj" Id="da9bb888-bf5f-4659-9194-ef437d50693d" />
-  <Project Path="LeapYear/LeapYear.csproj" Id="000048e7-1007-48f8-80cd-ab474e44d0fd" />
-  <Project Path="OddOrEven/OddOrEven.csproj" />
-  <Project Path="OddOrEvenLinq/OddOrEvenLinq.csproj" Id="c8d90345-fc89-4275-bb34-f9706681e841" />
-  <Project Path="OddsOrEvens/OddsOrEvens.csproj" />
-  <Project Path="Reverse/Reverse.csproj" Id="e836b090-71b5-4b83-b96a-ae2df6dbb7a0" />
-  <Project Path="ReverseLinq/ReverseLinq.csproj" Id="10e088cd-1e0b-4126-97dd-b879da95678b" />
-  <Project Path="ReverseLinq02/ReverseLinq02.csproj" Id="fc2cb292-b171-4686-8437-027c1f343999" />
-  <Project Path="ReverseTree/ReverseTree.csproj" Id="83e63f92-366d-4627-884d-420fb3e3d360" />
-  <Project Path="YearOfWeekend01/YearOfWeekend01.csproj" Id="86a987b7-2743-455d-b7ca-8a1962cee663" />
-  <Project Path="YearOfWeekend02/YearOfWeekend02.csproj" Id="eff27ee8-5564-47e6-965f-dce518de5694" />
-  <Project Path="YearOfWeekend03/YearOfWeekend03.csproj" Id="9f6569ec-4ebf-49e3-9c9c-10d22bc921b9" />
-  <Project Path="YearOfWeekendForm/YearOfWeekendForm.csproj" Id="66f5865e-52d9-434f-999f-7eb9a59b6ac6" />
-  <Project Path="YearOfWeekendForm02/YearOfWeekendForm02.csproj" Id="5e116ef7-ec4b-4c2d-ba8b-1f8e76924c0c" />
-  <Project Path="YearOfWeekendForm03/YearOfWeekendForm03.csproj" Id="0f65a298-e945-4d5b-b60f-71b9bea1d683" />
+  <Project Path="BackEnd/FarmerCrossRiver/FarmerCrossRiver.csproj" Id="da9bb888-bf5f-4659-9194-ef437d50693d" />
+  <Project Path="BackEnd/LeapYear/LeapYear.csproj" Id="000048e7-1007-48f8-80cd-ab474e44d0fd" />
+  <Project Path="BackEnd/OddOrEven/OddOrEven.csproj" />
+  <Project Path="BackEnd/OddOrEvenLinq/OddOrEvenLinq.csproj" Id="c8d90345-fc89-4275-bb34-f9706681e841" />
+  <Project Path="BackEnd/OddsOrEvens/OddsOrEvens.csproj" />
+  <Project Path="BackEnd/Reverse/Reverse.csproj" Id="e836b090-71b5-4b83-b96a-ae2df6dbb7a0" />
+  <Project Path="BackEnd/ReverseLinq/ReverseLinq.csproj" Id="10e088cd-1e0b-4126-97dd-b879da95678b" />
+  <Project Path="BackEnd/ReverseLinq02/ReverseLinq02.csproj" Id="fc2cb292-b171-4686-8437-027c1f343999" />
+  <Project Path="BackEnd/ReverseTree/ReverseTree.csproj" Id="83e63f92-366d-4627-884d-420fb3e3d360" />
+  <Project Path="BackEnd/YearOfWeekend01/YearOfWeekend01.csproj" Id="86a987b7-2743-455d-b7ca-8a1962cee663" />
+  <Project Path="BackEnd/YearOfWeekend02/YearOfWeekend02.csproj" Id="eff27ee8-5564-47e6-965f-dce518de5694" />
+  <Project Path="BackEnd/YearOfWeekend03/YearOfWeekend03.csproj" Id="9f6569ec-4ebf-49e3-9c9c-10d22bc921b9" />
+  <Project Path="BackEnd/YearOfWeekendForm/YearOfWeekendForm.csproj" Id="66f5865e-52d9-434f-999f-7eb9a59b6ac6" />
+  <Project Path="BackEnd/YearOfWeekendForm02/YearOfWeekendForm02.csproj" Id="5e116ee7-ec4b-4c2d-ba8b-1f8e76924c0c" />
+  <Project Path="BackEnd/YearOfWeekendForm03/YearOfWeekendForm03.csproj" Id="0f65a298-e945-4d5b-b60f-71b9bea1d683" />
 </Solution>
