@@ -1,0 +1,46 @@
+.action{
+  padding: 80px 0;
+}
+
+.action-content{
+  background-color: #3882f6;
+  color: white;
+  border-radius: 8px;
+  padding: 32px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap:24px;
+}
+
+.action-inside-content h4{
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.action-inside-content p{
+  font-size: 16px;
+}
+
+.btn{
+  background-color: #3882f6;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+@media screen and (min-width: 768px) {
+  .action-content{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .action-inside-content h4{
+  text-align: start;
+  }
+}
