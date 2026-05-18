@@ -1,24 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="container">
       <div class="d-flex flex-column mt-4 px-4 gap-3">
         <h1 class="title text-center">我的代辦清單</h1>
-        
+
         <ul class="list-group">
-          <li class="list-group-item d-flex align-items-center">
-            <input class="form-check-input me-2" type="checkbox" value="" id="firstCheckbox">
-            <label class="form-check-label flex-grow-1" for="firstCheckbox">項目一</label>
+          <!-- <li class="list-group-item d-flex align-items-center">
+            <input
+              class="form-check-input me-2"
+              type="checkbox"
+              value=""
+              id="firstCheckbox"
+            />
+            <label class="form-check-label flex-grow-1" for="firstCheckbox"
+              >項目一</label
+            >
             <button class="btn btn-danger btn-sm delete-btn">刪除</button>
-          </li>
+          </li> -->
         </ul>
-        
+
         <div class="create-list">
           <div class="input-group mb-3">
             <input
@@ -26,7 +38,7 @@
               class="form-control"
               placeholder="請輸入代辦事項"
               id="todoInput"
-            >
+            />
             <button class="btn btn-primary" type="button" id="addBtn">
               新增清單
             </button>
@@ -36,6 +48,60 @@
     </div>
 
     <script>
+      const myToDo = {
+        title: "我的代辦清單",
+        items: [
+          {
+            id: 1,
+            content: "項目一",
+            isDone: true,
+          },
+          {
+            id: 2,
+            content: "項目二",
+            isDone: false,
+          },
+          {
+            id: 3,
+            content: "項目三",
+            isDone: true,
+          },
+        ],
+      };
+      const title = document.querySelector("title");
+      title.textContent = myToDo.title;
+
+      for (let item of myToDo.items) {
+        const ul = document.querySelector(".list-group");
+        const li = document.createElement("li");
+        li.classList.add("list-group-item", "d-flex", "align-items-center");
+
+        const formCheckInput = document.createElement("input");
+        formCheckInput.type = "checkbox";
+        formCheckInput.classList.add("form-check-input", "me-2");
+        formCheckInput.checked = item.isDone;
+
+        const formCheckLabel = document.createElement("label");
+        formCheckLabel.classList.add("form-check-label", "flex-grow-1");
+        formCheckLabel.textContent = item.content;
+        if (item.isDone) {
+          formCheckLabel.classList.add("text-decoration-line-through");
+        }
+
+        const formCheckButton = document.createElement("button");
+        formCheckButton.classList.add(
+          "btn",
+          "btn-danger",
+          "btn-sm",
+          "delete-btn",
+        );
+        formCheckButton.textContent = "刪除";
+
+        li.append(formCheckInput, formCheckLabel, formCheckButton);
+
+        ul.append(li);
+      }
+
       const buttonElement = document.getElementById("addBtn");
       const myInput = document.querySelector("#todoInput");
       const ul = document.querySelector(".list-group");
@@ -48,35 +114,42 @@
         } else {
           const li = document.createElement("li");
           li.classList.add("list-group-item", "d-flex", "align-items-center");
-          
+
           const formCheckInput = document.createElement("input");
           formCheckInput.type = "checkbox";
           formCheckInput.classList.add("form-check-input", "me-2");
-          
+
           const formCheckLabel = document.createElement("label");
           formCheckLabel.classList.add("form-check-label", "flex-grow-1");
           formCheckLabel.textContent = inputValue;
-          
+
           const formCheckButton = document.createElement("button");
-          formCheckButton.classList.add("btn", "btn-danger", "btn-sm", "delete-btn");
+          formCheckButton.classList.add(
+            "btn",
+            "btn-danger",
+            "btn-sm",
+            "delete-btn",
+          );
           formCheckButton.textContent = "刪除";
-          
-          li.appendChild(formCheckInput);
-          li.appendChild(formCheckLabel);
-          li.appendChild(formCheckButton);
-          
-          ul.appendChild(li);
-          
+
+          li.append(formCheckInput, formCheckLabel, formCheckButton);
+
+          ul.append(li);
+
           myInput.value = "";
         }
       });
 
       ul.addEventListener("change", function (event) {
-        if (event.target.type === "checkbox") { // event.target 就是被勾選的那個 checkbox
+        if (event.target.type === "checkbox") {
+          // event.target 就是被勾選的那個 checkbox
           const li = event.target.closest("li"); // 找出這個 checkbox 所在的那一整列 li
           const label = li.querySelector("label"); // 找到同一列裡面的 label
-      
-          label.classList.toggle("text-decoration-line-through", event.target.checked); // checkbox 被勾起來，就加刪除線；取消勾選，就拿掉刪除線
+
+          label.classList.toggle(
+            "text-decoration-line-through",
+            event.target.checked,
+          ); // checkbox 被勾起來，就加刪除線；取消勾選，就拿掉刪除線
         }
       });
 
@@ -86,8 +159,11 @@
           li.remove();
         }
       });
-
     </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
