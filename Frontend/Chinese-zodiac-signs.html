@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>十二生肖排序</h1>
+
+    <p>原始資料：</p>
+    <p class="before"></p>
+
+    <p>依照十二生肖順序排序後：</p>
+    <p class="after"></p>
+
+    <script>
+      console.log("十二生肖排序(自訂排序):");
+      console.log("鼠,牛,虎,兔,龍,蛇,馬,羊,猴,雞,狗,豬 依照順序進行邏輯排序:");
+      const zoo = ["鼠", "龍", "猴", "雞", "牛", "馬"];
+
+      const zodiacOrder = [
+        "鼠",
+        "牛",
+        "虎",
+        "兔",
+        "龍",
+        "蛇",
+        "馬",
+        "羊",
+        "猴",
+        "雞",
+        "狗",
+        "豬",
+      ];
+
+      document.querySelector(".before").textContent = zoo.join("、");
+
+      zoo.sort((a, b) => {
+        return zodiacOrder.indexOf(a) - zodiacOrder.indexOf(b);
+      });
+
+      document.querySelector(".after").textContent = zoo.join("、");
+    </script>
+  </body>
+</html>
